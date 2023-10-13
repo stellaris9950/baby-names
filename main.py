@@ -44,7 +44,7 @@ def getMenuSelection():
 
 def displayAll(baby_data):
     # Display All Baby Data
-    print("\nDISPLAY ALL")
+    print(f"{baby_data}")
 
 
 def searchGender(baby_data):
