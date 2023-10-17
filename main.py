@@ -8,7 +8,6 @@ def main():
     file = open("baby-names-data.json")
     baby_data = json.load(file)
     file.close()
-
     # Main Menu
     loop = True
     while loop:
@@ -44,8 +43,8 @@ def getMenuSelection():
 
 def displayAll(baby_data):
     # Display All Baby Data
-    print(f"{baby_data}")
-
+    for baby in baby_data:
+        print(f"{baby['name']} (Rank {baby['rank']}, Gender: {baby['gender']})")
 
 def searchGender(baby_data):
     # Dislay All Baby Names based on Gender
@@ -65,7 +64,7 @@ def searchStartLetter(baby_data):
 def searchNameLength(baby_data):
     # Remove item from position
     print("\nSEARCH BY NAME LENGTH")
-
-
 # Invoke main to begin program
+
+
 main()
