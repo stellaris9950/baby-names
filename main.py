@@ -30,13 +30,13 @@ def main():
 
 def getMenuSelection():
     # Print Menu & Return User Selection
-    print("\n*** BABY DATA - MAIN MENU ***")
-    print("* 1: Display All")
-    print("* 2: Search by Gender")
-    print("* 3: Search by Rank")
-    print("* 4: Search by Starting Letter")
-    print("* 5: Search by Name Length")
-    print("* 6: Exit")
+    print("\n*** BABY DATA - MAIN MENU ***"
+          "\n* 1: Display All"
+          "\n* 2: Search by Gender"
+          "\n* 3: Search by Rank"
+          "\n* 4: Search by Starting Letter"
+          "\n* 5: Search by Name Length"
+          "\n* 6: Exit")
 
     return input("* Enter Option #: ")
 
@@ -48,9 +48,14 @@ def displayAll(baby_data):
 
 def searchGender(baby_data):
     # Dislay All Baby Names based on Gender
-    print("\nSEARCH BY GENDER")
-
-
+    later_list = []
+    for baby in baby_data:
+        if baby['gender'] == "Girl":
+            print(f"{baby['name']} (Rank {baby['rank']}, Gender: {baby['gender']})")
+        else:
+            later_list.append(baby)
+    for baby in later_list:
+        print(f"{baby['name']} (Rank {baby['rank']}, Gender: {baby['gender']})")
 def searchRank(baby_data):
     # Display All Baby Names based on Rank
     print("\nSEARCH BY RANK")
