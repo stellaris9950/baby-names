@@ -58,8 +58,22 @@ def searchGender(baby_data):
         print(f"{baby['name']} (Rank {baby['rank']}, Gender: {baby['gender']})")
 def searchRank(baby_data):
     # Display All Baby Names based on Rank
-    print("\nSEARCH BY RANK")
+    rank_set = 1
+    print_list = baby_data
+    loop = True
+    print(print_list)
+    while loop:
 
+        for baby in print_list:
+            if baby['rank'] == rank_set:
+                print(f"{baby['name']} (Rank {baby['rank']}, Gender: {baby['gender']})")
+                print_list.remove(baby)
+        rank_set += 1
+        loop = bool(print_list)
+
+    print(rank_set)
+    # for baby in print_list:
+    #     print(f"{baby['name']} (Rank {baby['rank']}, Gender: {baby['gender']})")
 
 def searchStartLetter(baby_data):
     # Insert User Item into a Position
